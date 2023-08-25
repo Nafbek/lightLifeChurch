@@ -6,9 +6,9 @@ export default function Footer() {
       <div>
         <h4>Contact us</h4>
       </div>
-      <di>
+      <div>
         <p>Powered with </p>
-      </di>
+      </div>
     </>
   );
 }
