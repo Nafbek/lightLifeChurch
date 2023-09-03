@@ -8,11 +8,16 @@ import "bootstrap/dist/css/bootstrap.css";
 import About from "./Components/About";
 import SlideImage from "./Components/SlideImages";
 
-
+const style = {
+  mainBgrdImage: {
+    backgroundImage:
+      'url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
+  },
+};
 function App() {
   return (
     <Router>
-      <div className="mainContainer" >
+      <div className="mainContainer" style={style.mainBgrdImage}>
         <Header />
         <SlideImage />
         <div>

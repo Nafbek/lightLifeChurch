@@ -1,14 +1,64 @@
+.first-nav-bar {
+}
+.formEl {
+  width: 40%;
+  margin-left: 40%;
+}
+.custom-search-bar {
+  background-color: rgb(178, 217, 230) !important;
+}
 .image-logo {
-  width: 5rem;
+  width: 5.5rem;
+  /* margin-left: 35%; */
 }
 .name-logo {
-  color: rgb(61, 109, 93);
-  font-size: smaller;
-
   text-decoration: none;
 }
-
-.first-nav-div {
+.name-logo > h1 {
+  color: rgba(242, 248, 250, 0.373);
+  font-size: 1.6rem;
+  margin-left: 5%;
+}
+.logo-div {
+  width: 60%;
 }
 .second-nav-div {
+  background-color: rgb(57, 87, 110, 0.1);
+}
+
+ul > li > .nav-link {
+  color: rgb(243, 227, 250);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .formEl {
+    width: auto;
+    margin-left: 1%;
+    margin-bottom: 2%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .image-logo {
+    margin-left: 30%;
+  }
+  .logo-div {
+    width: 50%;
+  }
+  ul > li > .nav-link {
+    font-weight: normal;
+  }
+}
+@media screen and (max-width: 471px) {
+  .logo-div {
+    width: 100%;
+    margin-left: 5%;
+  }
+  .image-logo {
+    margin-left: 35%;
+  }
+  .name-logo > h1 {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
 }

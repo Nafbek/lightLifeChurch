@@ -1,5 +1,15 @@
 import React from "react";
+import "./SlideImage.css";
 
+const style = {
+  imageSize: {
+    height: "25rem",
+    // marginLeft: "7rem",
+  },
+  imageContainer: {
+    display: "flex",
+  },
+};
 export default function SlideImage() {
   return (
     <div
@@ -35,11 +45,12 @@ export default function SlideImage() {
         ></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
+        <div className="carousel-item active" style={style.imageContainer}>
           <img
-            src="https://static.wixstatic.com/media/920af8_94ed9916b1d04cccaad0fd4d29787e18~mv2.jpg/v1/fill/w_960,h_642,al_c,q_85/920af8_94ed9916b1d04cccaad0fd4d29787e18~mv2.jpg"
+            src="https://files.logoscdn.com/v1/files/24936544/content.png?download=true&signature=U10GdfFXE5vRpxxUdyd2K8Tiab8"
             alt="slides"
             className="d-block w-100"
+            style={style.imageSize}
           />
           <div className="carousel-caption d-none d-md-block">
             <h5>First Slide Heading</h5>
@@ -50,7 +61,8 @@ export default function SlideImage() {
           <img
             src="https://i.ytimg.com/vi/b22JUSAq1Wg/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgSSg0MA8=&rs=AOn4CLBACcFJiw6ilkFfpv2IS7J4jqobvQ"
             alt="slides"
-            className="d-block w-100"
+            className="d-block mx-auto"
+            style={{ ...style.imageSize, margin: "auto" }}
           />
           <div className="carousel-caption d-none d-md-block">
             <h5>Second Slide Heading</h5>
@@ -60,9 +72,11 @@ export default function SlideImage() {
 
         <div className="carousel-item">
           <img
-            src="https://files.logoscdn.com/v1/files/24936544/content.png?download=true&signature=U10GdfFXE5vRpxxUdyd2K8Tiab8"
+            src="
+            https://static.wixstatic.com/media/920af8_94ed9916b1d04cccaad0fd4d29787e18~mv2.jpg/v1/fill/w_960,h_642,al_c,q_85/920af8_94ed9916b1d04cccaad0fd4d29787e18~mv2.jpg"
             alt="slides"
-            className="d-block w-100"
+            className="d-block mx-auto"
+            style={{ ...style.imageSize, margin: "auto" }}
           />
           <div className="carousel-caption d-none d-md-block">
             <h5>Third Slide Heading</h5>
@@ -70,7 +84,7 @@ export default function SlideImage() {
           </div>
         </div>
         <button
-          calssName="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#targetedSlideImage"
           data-bs-slide="prev"

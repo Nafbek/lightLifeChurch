@@ -7,25 +7,8 @@ export default function Header() {
   return (
     <header>
       <div className="first-nav-div">
-        <nav className="navbar backdrop-opacity-60 backdrop-invert bg-white/30">
-          <div className="container-fluid">
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="text"
-                placeholder="search here"
-                aria-label="search"
-              />
-              <button className="btn btn-outline-success">Search</button>
-            </form>
-            <button className="btn btn-outline-success">Donate</button>
-          </div>
-        </nav>
-      </div>
-
-      <div className="second-nav-div">
-        <nav className="navbar px-3">
-          <section>
+        <nav className="navbar backdrop-opacity-60 backdrop-invert">
+          <div className="logo-div">
             <a href="#">
               <img
                 src="/images/loel-logo.png"
@@ -36,7 +19,7 @@ export default function Header() {
             <a href="#" title="Go to LoLEC Home" className="name-logo">
               <h1>Light of Life Evangelical Church</h1>
             </a>
-          </section>
+          </div>
 
           <ul className="nav nav-pills">
             <li className="nav-item">
@@ -112,6 +95,23 @@ export default function Header() {
               </Link>
             </li>
           </ul>
+        </nav>
+      </div>
+
+      <div className="second-nav-div">
+        <nav className="navbar px-3">
+          <div className="container-fluid">
+            <form className="d-flex formEl" role="search">
+              <input
+                className="form-control me-2 custom-search-bar search-bar"
+                type="text"
+                placeholder="search here"
+                aria-label="search"
+              />
+              <button className="btn btn-outline-info">Search</button>
+            </form>
+            <button className="btn btn-success">Donate</button>
+          </div>
         </nav>
       </div>
     </header>
