@@ -13,6 +13,10 @@ const style = {
     backgroundImage:
       'url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
   },
+  contentBgrd: {
+    backgroundColor: " rgb(213, 238, 247)",
+    marginBottom: "0%",
+  },
 };
 function App() {
   return (
@@ -20,7 +24,7 @@ function App() {
       <div className="mainContainer" style={style.mainBgrdImage}>
         <Header />
         <SlideImage />
-        <div>
+        <div style={style.contentBgrd}>
           <Routes>
             <Route path="/contact" element={<Contact />} />
             <Route path="/" element={<About />} />
