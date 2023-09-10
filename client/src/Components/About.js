@@ -8,7 +8,7 @@ const style = {
 };
 export default function About() {
   return (
-    <>
+    <div className="container">
       <div>
         <h2>About us</h2>
       </div>
@@ -25,6 +25,6 @@ export default function About() {
           alone.{" "}
         </p>
       </div>
-    </>
+    </div>
   );
 }

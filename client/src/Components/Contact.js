@@ -1,12 +1,24 @@
 import React from "react";
+import "./Contact.css";
 
+const style = {
+  byEmail: {
+    margin: 0,
+    paddingBottom: ".5rem",
+  },
+  submitSize: {
+    fontSize: "1.5rem",
+    padding: ".5rem",
+    fontWeight: "bold",
+  },
+};
 export default function Contact() {
   return (
-    <div>
-      <form>
-        <div>
+    <div className="container contact-container">
+      <form className="form-div">
+        <div className="name-div">
           <label htmlFor="firstname" className="form-label">
-            First Name
+            First Name:
           </label>
           <input
             type="text"
@@ -14,7 +26,7 @@ export default function Contact() {
             placeholder="First Name"
             className="form-control"
           />
-          <label htmlFor="lastname">Last Name</label>
+          <label htmlFor="lastname">Last Name:</label>
           <input
             type="text"
             name="lastName"
@@ -22,9 +34,9 @@ export default function Contact() {
             className="form-control"
           />
         </div>
-        <div>
+        <div className="email-div">
           <label htmlFor="email" className="form-label">
-            Email
+            Email:
           </label>
           <input
             type="text"
@@ -33,16 +45,29 @@ export default function Contact() {
             className="form-control"
           />
         </div>
-        <div>
-          <label htmlFor="message" className="form-label">
-            Message
-          </label>
+        <div className="message-div">
+          <div>
+            <label htmlFor="message" className="form-label">
+              Message:
+            </label>
+          </div>
+
           <textarea className="text-area" name="message" />
         </div>
-        <button type="submit" className="submit-button">
-          Submit
-        </button>
+        <div>
+          <button
+            type="submit"
+            className="submit-button btn btn-outline-primary"
+            style={style.submitSize}
+          >
+            Send
+          </button>
+        </div>
       </form>
+      <h5 style={style.byEmail}>
+        OR send us by email:{" "}
+        <a href="mailto:lolec2022@gmail.com">lolec2022@gmail.com</a>
+      </h5>
     </div>
   );
 }

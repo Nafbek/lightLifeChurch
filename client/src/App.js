@@ -12,6 +12,7 @@ const style = {
   mainBgrdImage: {
     backgroundImage:
       'url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
+     minHeight: "100%"
   },
   contentBgrd: {
     backgroundColor: " rgb(213, 238, 247)",
@@ -29,6 +30,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/" element={<About />} />
           </Routes>
+          
         </div>
         <Footer />
       </div>

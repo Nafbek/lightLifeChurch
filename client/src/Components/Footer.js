@@ -5,6 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+const style = {
+  addressStyle: {
+    margin: 0,
+    fontSize: "1rem",
+  },
+  centerStyle: {
+    color: "yellow",
+  },
+};
 export default function Footer() {
   return (
     <div className="footer-container">
@@ -30,13 +39,17 @@ export default function Footer() {
 
           <div className="col align-self-center">
             <div>
-              <Link to="/contact" className="eachLink">
+              <Link
+                to="/contact"
+                className="eachLink"
+                style={style.centerStyle}
+              >
                 Contact us
               </Link>
             </div>
             <div>
-              <Link to="/donate" className="eachLink">
-                Donate
+              <Link to="/donate" className="eachLink" style={style.centerStyle}>
+                Give
               </Link>
             </div>
           </div>
@@ -48,14 +61,16 @@ export default function Footer() {
             </div>
             <div className="eachLink">
               <h4>Address:</h4>
-
-              <h6>
-                <FontAwesomeIcon icon={faPhone} /> +651-347-7509
-              </h6>
-              <h6>
+              <div>
+                <h6>
+                  <FontAwesomeIcon icon={faPhone} />
+                </h6>
+                <p style={style.addressStyle}>+651-347-7509</p>
+                <p style={style.addressStyle}>+651-434-7312</p>
                 <FontAwesomeIcon icon={faEnvelope} />
-                lightoflifechurch@gmail.com
-              </h6>
+                <p style={style.addressStyle}>lolec2022@gmail.com</p>
+              </div>
+
               <a
                 href="https://www.google.com/maps/place/104+Snelling+Ave+S,+St+Paul,+MN+55105/@44.9384158,-93.1690496,17z/data=!3m1!4b1!4m6!3m5!1s0x87f62a17c2fe574d:0x64fe56b109e05f89!8m2!3d44.938412!4d-93.1664747!16s%2Fg%2F11bw3yd4hh?authuser=0&entry=ttu"
                 className="addressLink"
@@ -66,9 +81,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="row developerMessageDiv">
-          <p>Powered with ❤️</p>
-        </div>
+      </div>
+      <div className="developerMessageContainer">
+        <div className="developerMessageDiv">Powered with ❤️</div>
+        <div> &copy; 2023</div>
       </div>
     </div>
   );

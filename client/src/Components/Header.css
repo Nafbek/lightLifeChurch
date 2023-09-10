@@ -15,7 +15,7 @@
   text-decoration: none;
 }
 .name-logo > h1 {
-  color: rgba(242, 248, 250, 0.373);
+  color: azure;
   font-size: 1.6rem;
   margin-left: 5%;
 }
@@ -27,8 +27,7 @@
 }
 
 ul > li > .nav-link {
-  color: rgb(243, 227, 250);
-  font-weight: bold;
+  color: azure;
 }
 
 @media screen and (max-width: 768px) {

@@ -16,7 +16,7 @@ export default function Header() {
                 className="image-logo"
               />
             </a>
-            <a href="#" title="Go to LoLEC Home" className="name-logo">
+            <a href="/" title="Go to LoLEC Home" className="name-logo">
               <h1>Light of Life Evangelical Church</h1>
             </a>
           </div>
@@ -110,7 +110,7 @@ export default function Header() {
               />
               <button className="btn btn-outline-info">Search</button>
             </form>
-            <button className="btn btn-success">Donate</button>
+            <button className="btn btn-success">Give</button>
           </div>
         </nav>
       </div>

@@ -2,9 +2,12 @@
   background-color: rgba(238, 243, 243, 0.3);
   padding: 1.5rem;
   color: azure;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .linkContainer {
-  margin-left: 10rem;
   margin-bottom: 1rem;
 }
 .eachLink {
@@ -15,35 +18,12 @@
   font-weight: bold;
 }
 .developerMessageDiv {
-  margin-left: 33rem !important;
   text-decoration-line: overline;
   font-family: cursive;
   font-style: oblique;
+  max-width: 10rem;
+  padding: 0.2rem;
 }
 .addressLink {
-  /* text-decoration: none; */
   color: aquamarine;
-}
-
-@media screen and (max-width: 768px) {
-  .developerMessageDiv {
-    margin-left: 20rem !important;
-  }
-}
-@media screen and (max-width: 425px) {
-  .developerMessageDiv {
-    margin-left: 9rem !important;
-  }
-  .linkContainer {
-    margin-left: 2rem;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .developerMessageDiv {
-    margin-left: 5.5rem !important;
-  }
-  .linkContainer {
-    margin-left: 0rem;
-  }
 }
