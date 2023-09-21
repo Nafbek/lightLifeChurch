@@ -16,6 +16,7 @@ export default function Contact() {
   return (
     <div className="container contact-container">
       <form className="form-div">
+        <h3>Contact us</h3>
         <div className="name-div">
           <label htmlFor="firstname" className="form-label">
             First Name:
@@ -60,7 +61,7 @@ export default function Contact() {
             className="submit-button btn btn-outline-primary"
             style={style.submitSize}
           >
-            Send
+            Send Message
           </button>
         </div>
       </form>

@@ -22,6 +22,9 @@ export default function Header() {
           </div>
 
           <ul className="nav nav-pills">
+            <div>
+              <ul></ul>
+            </div>
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 About us

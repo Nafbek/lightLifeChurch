@@ -7,16 +7,19 @@ import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.css";
 import About from "./Components/About";
 import SlideImage from "./Components/SlideImages";
+import SermonVideos from "./Components/Sermon";
+
 
 const style = {
   mainBgrdImage: {
     backgroundImage:
       'url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
-     minHeight: "100%"
+    minHeight: "100%",
   },
   contentBgrd: {
     backgroundColor: " rgb(213, 238, 247)",
     marginBottom: "0%",
+    minHeight: "25rem",
   },
 };
 function App() {
@@ -29,11 +32,11 @@ function App() {
           <Routes>
             <Route path="/contact" element={<Contact />} />
             <Route path="/" element={<About />} />
+            <Route path={"/sermon"} element={<SermonVideos />} />;
           </Routes>
-          
         </div>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 }

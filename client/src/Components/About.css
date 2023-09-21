@@ -1,0 +1,11 @@
+.collapse-heading {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icons {
+  width: 3rem;
+  padding: 2%;
+}
+.aboutBox {
+  font-size: 1.3rem;
+}

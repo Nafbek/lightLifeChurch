@@ -13,10 +13,13 @@ const style = {
   centerStyle: {
     color: "yellow",
   },
+  footerBgrd: {
+    backgroundImage: 'url("/images/footer-background.jpg")',
+  },
 };
 export default function Footer() {
   return (
-    <div className="footer-container">
+    <div className="footer-container" style={style.footerBgrd}>
       <div className="container">
         <div className="row">
           <div className="col align-self-start linkContainer">
@@ -34,6 +37,11 @@ export default function Footer() {
               <Link to="/ministries" className="eachLink">
                 Ministries
               </Link>
+            </div>
+            <div>
+              <a href="#" className="eachLink">
+                Resources
+              </a>
             </div>
           </div>
 
@@ -54,11 +62,6 @@ export default function Footer() {
             </div>
           </div>
           <div className="col align-self-start">
-            <div>
-              <a href="#" className="eachLink">
-                Resources
-              </a>
-            </div>
             <div className="eachLink">
               <h4>Address:</h4>
               <div>
@@ -69,6 +72,14 @@ export default function Footer() {
                 <p style={style.addressStyle}>+651-434-7312</p>
                 <FontAwesomeIcon icon={faEnvelope} />
                 <p style={style.addressStyle}>lolec2022@gmail.com</p>
+              </div>
+              <div>
+                <a href="https://www.facebook.com/LOLEC2022/" target="block">
+                  <img src="/images/facebook_icon.png" className="icons" />
+                </a>
+                <a href="https://www.youtube.com/@lightoflifeevangelicalchur1098">
+                  <img src="/images/youtube_icon.png" className="icons" />
+                </a>
               </div>
 
               <a
@@ -84,7 +95,7 @@ export default function Footer() {
       </div>
       <div className="developerMessageContainer">
         <div className="developerMessageDiv">Powered with ❤️</div>
-        <div> &copy; 2023</div>
+        <div> &copy; 2023 LOLEC </div>
       </div>
     </div>
   );

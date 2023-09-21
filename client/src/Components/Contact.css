@@ -1,8 +1,14 @@
 .form-div {
   margin-left: 1%;
+
   padding: 2%;
   width: 40%;
+  border-left: solid;
+  border-right: solid;
+  border-color: brown;
+  border-width: 1.5rem;
 }
+h3,
 .name-div,
 .email-div,
 .message-div {
