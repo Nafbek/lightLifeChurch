@@ -33,11 +33,7 @@ export default function Footer() {
                 Sermons
               </Link>
             </div>
-            <div>
-              <Link to="/ministries" className="eachLink">
-                Ministries
-              </Link>
-            </div>
+
             <div>
               <a href="#" className="eachLink">
                 Resources

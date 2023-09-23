@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import About from "./Components/About";
 import SlideImage from "./Components/SlideImages";
 import SermonVideos from "./Components/Sermon";
-
+import Ministries from "./Components/MinistriesPage/MinistriesContainer";
 
 const style = {
   mainBgrdImage: {
@@ -33,6 +33,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/" element={<About />} />
             <Route path={"/sermon"} element={<SermonVideos />} />;
+            <Route path="/ministries/:ministry" element={<Ministries />} />
           </Routes>
         </div>
       </div>

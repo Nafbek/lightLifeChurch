@@ -47,37 +47,40 @@ export default function Header() {
 
               <ul className="dropdown-menu">
                 <li>
-                  <Link className="dropdown-item" to="/prayer">
+                  <Link className="dropdown-item" to="ministries/prayer">
                     Prayer
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/women">
+                  <Link className="dropdown-item" to="ministries/women">
                     Women's Ministry
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/outreach">
+                  <Link className="dropdown-item" to="ministries/outreach">
                     Outreach and Evangelism
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/childrenandyouth">
+                  <Link
+                    className="dropdown-item"
+                    to="ministries/childrenandyouth"
+                  >
                     Children and Youth
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/youngadults">
+                  <Link className="dropdown-item" to="ministries/youngadults">
                     Young Adults
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/worship">
+                  <Link className="dropdown-item" to="ministries/worship">
                     Worship
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/deacons">
+                  <Link className="dropdown-item" to="ministries/deacons">
                     Deacon's
                   </Link>
                 </li>
@@ -85,7 +88,7 @@ export default function Header() {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/fundraising">
+                  <Link className="dropdown-item" to="ministries/fundraising">
                     Fund raising
                   </Link>
                 </li>

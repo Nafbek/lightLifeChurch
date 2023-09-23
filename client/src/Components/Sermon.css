@@ -1,0 +1,16 @@
+.videoContainer {
+  margin-left: 2%;
+}
+
+.floatedContainer {
+  width: 60%;
+}
+.bibleImage {
+  width: 50%;
+}
+
+@media screen and (max-width: 320px) {
+  .videoContainer {
+    margin-left: 0;
+  }
+}
