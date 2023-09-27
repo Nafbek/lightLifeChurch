@@ -1,9 +1,10 @@
 import React from "react";
 
+
 export default function ChildrenAndYouth() {
   return (
     <>
-      <div>
+      <div className="container">
         <h2>Children and Youth Ministry</h2>
         <div>
           <p>

@@ -1,0 +1,11 @@
+.cardContainer {
+  margin-left: 25%;
+  width: 35%;
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    margin-left: 1%;
+    width: 80%;
+  }
+}

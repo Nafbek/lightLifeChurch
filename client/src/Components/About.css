@@ -6,6 +6,86 @@
   width: 3rem;
   padding: 2%;
 }
-.aboutBox {
-  font-size: 1.3rem;
+
+.each-collapse {
+  background-color: rgb(63, 97, 207);
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: antiquewhite;
+  line-height: 1.5;
+}
+.about-description {
+  font-size: 2rem;
+  font-family: "Delicious Handrawn", cursive;
+  margin-bottom: 4%;
+}
+.multiCollapse-link {
+  font-size: xx-large;
+}
+
+.vision-heading {
+  margin-left: 20%;
+  font-family: "Delicious Handrawn", cursive;
+}
+/* .page-header {
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 3rem;
+  color: rgb(25, 51, 13);
+} */
+.hero-schedule-image {
+  position: relative;
+}
+.hero-schedule-image video {
+  width: 100%;
+  height: auto;
+}
+
+.text-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(11, 253, 208);
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 3rem;
+}
+
+.formAndImage-container {
+  background-color: rgba(6, 201, 215, 0.75);
+}
+.form-container {
+  width: 35%;
+  margin-left: 6rem;
+  border-style: outset;
+}
+.visit-us {
+  background-color: rgba(14, 15, 10, 0.75);
+  min-height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-btn {
+  
+}
+
+@media screen and (max-width: 768px) {
+  .text-container {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 100%;
+    margin-left: 0;
+  }
 }

@@ -3,7 +3,7 @@ import React from "react";
 export default function Outreach() {
   return (
     <>
-      <div>
+      <div className="container">
         <h2>Outreach and Evangelism Ministry</h2>
         <div>
           <h3>

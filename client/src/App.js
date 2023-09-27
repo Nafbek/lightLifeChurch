@@ -17,7 +17,7 @@ const style = {
     minHeight: "100%",
   },
   contentBgrd: {
-    backgroundColor: " rgb(213, 238, 247)",
+    backgroundColor: "rgb(213, 238, 247)",
     marginBottom: "0%",
     minHeight: "25rem",
   },

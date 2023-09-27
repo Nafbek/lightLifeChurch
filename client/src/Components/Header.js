@@ -21,7 +21,7 @@ export default function Header() {
             </a>
           </div>
 
-          <ul className="nav nav-pills">
+          <ul className="nav nav-pills first-navList">
             <div>
               <ul></ul>
             </div>
@@ -38,7 +38,7 @@ export default function Header() {
             <div className="dropdown">
               <button
                 type="button"
-                className="btn btn-primary dropdown-toggle"
+                className="btn btn-primary dropdown-toggle ministries-dropdown"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
@@ -49,6 +49,11 @@ export default function Header() {
                 <li>
                   <Link className="dropdown-item" to="ministries/prayer">
                     Prayer
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="ministries/pastoral">
+                    Pastoral
                   </Link>
                 </li>
                 <li>

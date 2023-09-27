@@ -53,8 +53,12 @@ export default function SlideImage() {
             style={style.imageSize}
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>First Slide Heading</h5>
-            <p>Short slide image description.......................</p>
+            <h5>
+              "When Jesus spoke again to the people, he said, 'I am the light of
+              the world. Whoever follows me will never walk in darkness, but
+              will have the light of life.'"
+            </h5>
+            <p>John 8:12</p>
           </div>
         </div>
         <div className="carousel-item">

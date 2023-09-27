@@ -3,7 +3,7 @@ import React from "react";
 export default function Worship() {
   return (
     <>
-      <div>
+      <div className="container">
         <h2>Worship</h2>
         <div>
           <p>

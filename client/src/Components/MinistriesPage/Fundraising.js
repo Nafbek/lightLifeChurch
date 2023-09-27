@@ -3,7 +3,7 @@ import React from "react";
 export default function Fundraising() {
   return (
     <>
-      <div>
+      <div className="container">
         <h2>Fundraising</h2>
         <div>
           <p>

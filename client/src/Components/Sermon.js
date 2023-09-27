@@ -79,7 +79,9 @@ export default function SermonVideos() {
         </div>
       </div>
       {loading ? (
-        <div>Loading...</div>
+        <div className="spinner-border text-primaary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
       ) : error ? (
         <div>Error: {error.message}</div>
       ) : (

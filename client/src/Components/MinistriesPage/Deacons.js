@@ -3,7 +3,7 @@ import React from "react";
 export default function Deacon() {
   return (
     <>
-      <div>
+      <div className="container">
         <h2>Deacon's Ministry</h2>
         <div>
           <p>

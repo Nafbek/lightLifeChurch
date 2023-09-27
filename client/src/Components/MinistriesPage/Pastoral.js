@@ -3,7 +3,7 @@ import React from "react";
 export default function Pastoral() {
   return (
     <>
-      <div>
+      <div className="container">
         <h2>Pastoral</h2>
         <div>
           <p>

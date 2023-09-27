@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-// import Header from "../Header";
 import Women from "./Women";
 import Prayer from "./Prayer";
 import Deacon from "./Deacons";
@@ -12,10 +11,6 @@ import Fundraising from "./Fundraising";
 import Worship from "./Worship";
 
 export default function Ministries() {
-  //   const [ministry, setMinistries] = useState("Prayer");
-
-  //   const handleChosenMinistry = (e) => setMinistries(e.target.value);
-
   const { ministry } = useParams();
   if (ministry === "prayer") {
     return <Prayer />;

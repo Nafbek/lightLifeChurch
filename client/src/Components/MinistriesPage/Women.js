@@ -1,9 +1,14 @@
 import React from "react";
 
+const style = {
+  padding: {
+    padding: "1rem",
+  },
+};
 export default function Women() {
   return (
     <>
-      <div>
+      <div className="container" style={style.padding}>
         <h1>Women</h1>
         <div>
           <p>
