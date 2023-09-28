@@ -1,22 +1,19 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
 
-class Contact extends Model {}
+class membershipVolunteerism extends Model {}
 
-Contact.init(
+membershipVolunteerism.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
     },
-    firstName: {
-      type: DataTypes.STRING,
+    purpose: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    lastName: {
-      type: DataTypes.STRING,
+    fullName: {
+      type: DataTypes.CHAR,
       allowNull: false,
     },
     email: {
@@ -27,19 +24,19 @@ Contact.init(
         isEmail: true,
       },
     },
-    message: {
-      type: DataTypes.CHAR,
+    phoneNumber: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    volunteerismArea: {
+      type: DataTypes.STRING,
       allowNull: false,
-      maxLength: 300,
     },
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "contact",
+    modelName: "membershipVolunteerism",
   }
 );
-
-module.exports = Contact;
