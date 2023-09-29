@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
 
-class membershipVolunteerism extends Model {}
+class MembershipVolunteerism extends Model {}
 
-membershipVolunteerism.init(
+MembershipVolunteerism.init(
   {
     id: {
       type: DataTypes.INTEGER,
