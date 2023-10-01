@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class MembershipVolunteerism extends Model {}
 
@@ -7,6 +8,8 @@ MembershipVolunteerism.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
     purpose: {
       type: DataTypes.BOOLEAN,
@@ -31,6 +34,9 @@ MembershipVolunteerism.init(
     volunteerismArea: {
       type: DataTypes.STRING,
       allowNull: false,
+      get() {
+        this.getDataValue("volunteerismArea").toUpperCase().trim();
+      },
     },
   },
   {

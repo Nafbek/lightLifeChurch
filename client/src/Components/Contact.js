@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
+import {
+  // getSingleMemberVolunteer,
+  // getALLMemberVolunteer,
+  // createMemberVolunteer,
+  // deleteMembersVolunteers,
+  // getContact,
+  createContact,
+} from "../utils/API";
 
 const style = {
   byEmail: {
@@ -13,6 +21,44 @@ const style = {
   },
 };
 export default function Contact() {
+  const [submitStatus, setSubmitStatus] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await createContact(formData);
+      console.log("Server response", response);
+
+      if (response.ok) {
+        setSubmitStatus("Form submitted successfully.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        console.log("Error submitting contact form");
+        setSubmitStatus("Error submitting contact form. Please try again.");
+      }
+    } catch (error) {
+      console.log("Error submitting contact form", error);
+      setSubmitStatus("Error submitting contact form. Please try again.");
+    }
+  };
+
   return (
     <div className="container contact-container">
       <form className="form-div">
@@ -26,6 +72,7 @@ export default function Contact() {
             name="firstName"
             placeholder="First Name"
             className="form-control"
+            onChange={handleInputChange}
           />
           <label htmlFor="lastname">Last Name:</label>
           <input
@@ -33,6 +80,7 @@ export default function Contact() {
             name="lastName"
             placeholder="Last Name"
             className="form-control"
+            onChange={handleInputChange}
           />
         </div>
         <div className="email-div">
@@ -44,6 +92,7 @@ export default function Contact() {
             name="email"
             placeholder="Email"
             className="form-control"
+            onChange={handleInputChange}
           />
         </div>
         <div className="message-div">
@@ -53,18 +102,24 @@ export default function Contact() {
             </label>
           </div>
 
-          <textarea className="text-area" name="message" />
+          <textarea
+            className="text-area"
+            name="message"
+            onChange={handleInputChange}
+          />
         </div>
         <div>
           <button
             type="submit"
             className="submit-button btn btn-outline-primary"
             style={style.submitSize}
+            onClick={handleFormSubmit}
           >
             Send Message
           </button>
         </div>
       </form>
+      {submitStatus && <p>{submitStatus}</p>}
       <h5 style={style.byEmail}>
         OR send us by email:{" "}
         <a href="mailto:lolec2022@gmail.com">lolec2022@gmail.com</a>

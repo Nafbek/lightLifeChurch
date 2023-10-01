@@ -1,7 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Contact extends Model {}
+class Contact extends Model {
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
 
 Contact.init(
   {
@@ -19,6 +23,7 @@ Contact.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,13 +33,13 @@ Contact.init(
       },
     },
     message: {
-      type: DataTypes.CHAR,
+      type: DataTypes.TEXT,
       allowNull: false,
       maxLength: 300,
     },
   },
   {
-    sequelize,
+    sequelize, //Pass my connection instance
     timestamps: false,
     freezeTableName: true,
     underscored: true,
