@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
-
+import "../utils/API";
+import { createMemberVolunteer } from "../utils/API";
 const style = {
   elementWidth: {
     marginBottom: 0,
@@ -11,6 +12,68 @@ const style = {
   },
 };
 export default function About() {
+  const [formData, setFormData] = useState({
+    purpose: [],
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    volunteerismArea: "",
+  });
+  const [statusMessage, setStatusMessage] = useState();
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    if (type === "checkbox") {
+      const updatedvalues = checked
+        ? [...formData[name], value]
+        : formData[name].filter((item) => item !== value);
+      setFormData({ ...formData, [name]: updatedvalues });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Button get clicked.");
+
+    const purpose = Array.isArray(formData.purpose)
+      ? formData.purpose.join(",")
+      : [formData.purpose];
+  
+    try {
+      const response = await createMemberVolunteer({
+        ...formData,
+        purpose,
+      });
+      console.log("Response:", response);
+      if (response.ok) {
+        setStatusMessage("Form submitted successfully.");
+        setFormData({
+          purpose: [],
+          fullName: "",
+          email: "",
+          phoneNumber: "",
+          volunteerismArea: "",
+        });
+      } else {
+        setStatusMessage("Error submitting form. Please try again.");
+        console.log("Error submitting form:");
+      }
+    } catch (error) {
+      console.log("Error submittin form:", error);
+      setStatusMessage("Error submitting form. Please try again.");
+    }
+  };
+
+  const handleVisitButton = () => {
+    window.open(
+      "https://www.google.com/maps/place/104+Snelling+Ave+S,+St+Paul,+MN+55105/@44.9384158,-93.1690496,17z/data=!3m1!4b1!4m6!3m5!1s0x87f62a17c2fe574d:0x64fe56b109e05f89!8m2!3d44.938412!4d-93.1664747!16s%2Fg%2F11bw3yd4hh?authuser=0&entry=ttu",
+      "_blank"
+    );
+  };
+
   return (
     <>
       <div className="container about-container" style={style.elementWidth}>
@@ -198,8 +261,10 @@ export default function About() {
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
+                name="purpose"
+                value="volunteerism"
                 id="volunteerism"
+                onChange={handleInputChange}
               />
               <label className="form-check-label" htmlFor="volunteerism">
                 Volunteerism
@@ -209,8 +274,10 @@ export default function About() {
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
+                name="purpose"
+                value="membership"
                 id="membership"
+                onChange={handleInputChange}
               />
               <label className="form-check-label" htmlFor="membership">
                 Membership
@@ -225,11 +292,24 @@ export default function About() {
                 required
                 placeholder="full name"
                 aria-label="full name"
+                name="fullName"
+                onChange={handleInputChange}
               />
               <label>Preferred Email:</label>
-              <input type="text" placeholder="email" />
+              <input
+                type="text"
+                placeholder="email"
+                name="email"
+                onChange={handleInputChange}
+              />
               <label>Phone Number:</label>
-              <input type="text" required placeholder="phone number" />
+              <input
+                type="text"
+                required
+                placeholder="phone number"
+                name="phoneNumber"
+                onChange={handleInputChange}
+              />
               <div>
                 <label htmlFor="volunteerismList" className="form-label">
                   Choose Ministry/ies you would like to volunteer in.
@@ -238,7 +318,9 @@ export default function About() {
                   className="form-control"
                   list="datalistOptions"
                   id="volunteerismList"
+                  name="volunteerismArea"
                   placeholder="type to search area of volunteerism"
+                  onChange={handleInputChange}
                 />
                 <datalist id="datalistOptions">
                   <option value="Children and Youth" />
@@ -250,12 +332,24 @@ export default function About() {
                   <option value="other" />
                 </datalist>
               </div>
+              <button
+                className="btn btn-outline submit-button m-2"
+                type="submit"
+                onClick={handleFormSubmit}
+              >
+                Submit
+              </button>
             </form>
-            <button className="btn btn-outline m-2">Submit</button>
           </div>
+          {statusMessage && <p>{statusMessage}</p>}
         </div>
         <div className="text-center visit-us">
-          <button className="btn form-btn">Visit us</button>
+          <button
+            className="btn btn-outline form-btn visitButton"
+            onClick={handleVisitButton}
+          >
+            Visit us
+          </button>
         </div>
       </div>
     </>

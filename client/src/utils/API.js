@@ -20,17 +20,24 @@ export const getContact = (email) => {
 };
 
 export const createMemberVolunteer = (data) => {
-  return fetch("/api", {
+  console.log(API_BASE_URL);
+  return fetch(`${API_BASE_URL}/api/membership`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+      purpose: JSON.stringify(data.purpose),
+      fullName: data.fullName,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      volunteerismArea: data.volunteerismArea,
+    }),
   });
 };
 
-export const getSingleMemberVolunteer = () => {
-  return fetch("/api", {
+export const getSingleMemberVolunteer = (email) => {
+  return fetch(`${API_BASE_URL}/api/membership/${email}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +46,7 @@ export const getSingleMemberVolunteer = () => {
 };
 
 export const getALLMemberVolunteer = () => {
-  return fetch("/api", {
+  return fetch(`${API_BASE_URL}/membership`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +55,7 @@ export const getALLMemberVolunteer = () => {
 };
 
 export const deleteMembersVolunteers = (email) => {
-  return fetch(`/api/${email}`, {
+  return fetch(`${API_BASE_URL}/api/membership/${email}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

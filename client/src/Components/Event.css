@@ -1,0 +1,45 @@
+#offcanvasRight {
+  width: 50rem;
+  background-color: rgb(158, 251, 232);
+}
+
+.calendarStarter-btn {
+  display: flex;
+  padding: 1%;
+  background-color: rgb(39, 51, 55);
+  min-height: 25rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendarButton {
+  padding: 3rem;
+  background-color: antiquewhite;
+  color: rgb(3, 54, 37);
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 2rem;
+}
+h5 {
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 2rem;
+}
+.EventMain-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(127, 255, 212, 0.5);
+}
+.each-card {
+  width: 30rem;
+}
+
+.pop-btn {
+  margin-top: 0.2rem;
+  
+}
+
+.calendarButton:hover {
+  background-color: rgb(158, 251, 232);
+  color: rgb(23, 27, 2);
+}

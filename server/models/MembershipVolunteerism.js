@@ -12,11 +12,11 @@ MembershipVolunteerism.init(
       autoIncrement: true,
     },
     purpose: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     fullName: {
-      type: DataTypes.CHAR,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
@@ -35,7 +35,7 @@ MembershipVolunteerism.init(
       type: DataTypes.STRING,
       allowNull: false,
       get() {
-        this.getDataValue("volunteerismArea").toUpperCase().trim();
+        return this.getDataValue("volunteerismArea").toUpperCase().trim();
       },
     },
   },
@@ -46,3 +46,5 @@ MembershipVolunteerism.init(
     modelName: "membershipVolunteerism",
   }
 );
+
+module.exports = MembershipVolunteerism;

@@ -3,13 +3,15 @@ const express = require("express");
 const sequelize = require("./config/connection");
 const routes = require("./routes");
 const cors = require("cors");
+const corsOptions = require("./cors");
 
 const PORT = 3001;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
+
 app.use(routes);
 
 app.use(express.static(path.join(__dirname, "../client/build")));
@@ -19,5 +21,7 @@ app.get("*", (req, res) => {
 });
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+  app.listen(PORT, () =>
+    console.log(`Now listening on http://localhost:${PORT}`)
+  );
 });

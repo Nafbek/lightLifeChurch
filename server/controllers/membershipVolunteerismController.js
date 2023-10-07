@@ -1,12 +1,24 @@
 const MembershipVolunteerism = require("../models/MembershipVolunteerism");
+const sendEmail = require("./sendEmail");
 
 const createMemberVolunteer = async (req, res) => {
   try {
-    const createdMemberVolunteer = await MembershipVolunteerism.create(
-      req.body
-    );
+    const { purpose, fullName, email, phoneNumber, volunteerismArea } =
+      req.body;
+    console.log(req.body);
+    const parsedPurpose = JSON.parse(purpose);
+    const createdMemberVolunteer = await MembershipVolunteerism.create({
+      purpose: parsedPurpose,
+      fullName,
+      email,
+      phoneNumber,
+      volunteerismArea,
+    });
+    console.log("Memebership/Volunteerism created:", createdMemberVolunteer);
+    sendEmail(req.body);
     res.status(200).json(createdMemberVolunteer);
   } catch (error) {
+    console.log("Server error for membership/volunteerism form", error);
     res.status(500).json({ error: "Server Error" });
   }
 };

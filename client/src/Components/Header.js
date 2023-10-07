@@ -22,9 +22,7 @@ export default function Header() {
           </div>
 
           <ul className="nav nav-pills first-navList">
-            <div>
-              <ul></ul>
-            </div>
+            <div></div>
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 About us
@@ -99,7 +97,12 @@ export default function Header() {
                 </li>
               </ul>
             </div>
-
+            <li>
+              {" "}
+              <Link className="nav-link" to="/event">
+                Event
+              </Link>
+            </li>
             <li>
               <Link className="nav-link" to="/contact">
                 Contact

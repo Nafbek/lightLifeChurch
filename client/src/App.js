@@ -9,6 +9,7 @@ import About from "./Components/About";
 import SlideImage from "./Components/SlideImages";
 import SermonVideos from "./Components/Sermon";
 import Ministries from "./Components/MinistriesPage/MinistriesContainer";
+import Event from "./Components/Event";
 
 const style = {
   mainBgrdImage: {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/" element={<About />} />
             <Route path={"/sermon"} element={<SermonVideos />} />;
             <Route path="/ministries/:ministry" element={<Ministries />} />
+            <Route path="/event" element={<Event />} />
           </Routes>
         </div>
       </div>

@@ -74,8 +74,12 @@
   text-align: center;
 }
 
-.form-btn {
-  
+.visitButton {
+  color: rgba(14, 15, 10, 0.75);
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 3rem;
+  background-color: rgb(203, 248, 239);
+  width: 15rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -88,4 +92,9 @@
     width: 100%;
     margin-left: 0;
   }
+}
+
+.visitButton:hover {
+  color: rgb(51, 173, 248);
+  background-color: azure;
 }

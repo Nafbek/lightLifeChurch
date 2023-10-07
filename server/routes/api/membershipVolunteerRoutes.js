@@ -8,10 +8,12 @@ const {
 } = require("../../controllers/membershipVolunteerismController");
 
 router
-  .route("/")
+  .route("/membership")
   .post(createMemberVolunteer)
+  .get(getAllMemberVolunteers);
+router
+  .route(`/membership/:email`)
   .get(getSingleMemberVolunteer)
-  .get(getAllMemberVolunteers)
   .delete(deleteMembersVolunteers);
 
 module.exports = router;

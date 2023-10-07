@@ -21,34 +21,43 @@ export default function SermonVideos() {
   const { id } = useParams;
   console.log(videoData);
   useEffect(() => {
-    try {
-      fetch(
-        `   https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&channelId=${channelId}&part=snippet,id&order=date`
-      )
-        .then((response) => {
-          if (!response) {
-            throw new Error("Network error");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          const videoIds = data.items.map((item) => item.id.videoId);
-          setVideoData(data.items);
-          setLoading(false);
-        })
-        .catch((error) => {
-          setError(error);
-          setLoading(false);
-        });
-    } catch (err) {
-      setError(err);
+    const storedVideoData = localStorage.getItem("sermonVideos");
+    if (storedVideoData) {
+      setVideoData(JSON.parse(storedVideoData));
       setLoading(false);
+    } else {
+      try {
+        fetch(
+          `   https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&channelId=${channelId}&part=snippet,id&order=date`
+        )
+          .then((response) => {
+            if (!response) {
+              throw new Error("Network error");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+            const videoIds = data.items.map((item) => item.id.videoId);
+            setVideoData(data.items);
+            localStorage.setItem("sermonVideos", JSON.stringify(data.items));
+            setLoading(false);
+          })
+          .catch((error) => {
+            setError(error);
+            setLoading(false);
+          });
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
     }
   }, []);
   return (
-    <div>
-      <h3>Sermon Videos</h3>
+    <div className="entireSermon-container">
+      <div className="heading-container">
+        <h3>Sermon Videos</h3>
+      </div>
       <div className="container floatedContainer">
         <div className="clearfix">
           <img
@@ -56,26 +65,36 @@ export default function SermonVideos() {
             src="/images/bible.jpg"
           />
           <p>
-            Congregation believes, teaches, and confesses Jesus Christ as Lord
-            and S everything was made, and through whose life, death, and
-            resurrection God fashions a new creation and believes that salvatio
+            Welcome to our Sermon Videos section, where you can experience the
+            inspiring and uplifting messages delivered by our dedicated pastors
+            and evangelists.
           </p>
           <p>
-            Congregation believes, teaches, and confesses Jesus Christ as Lord
-            and Jesus Christ as Lord and Savior, through whom everything was
-            made, and through whose life, death, and resurrection God fashions a
-            new creation and believes that salvatio
+            Our collection of sermon videos offers a valuable resource for both
+            our congregation and visitors seeking spiritual guidance,
+            inspiration, and a deeper understanding of faith.
           </p>
           <p>
-            Congregation believes, teaches, and confesses Jesus Christ as Lord
-            and Savior, through whom everything was made, and through whose
-            life, death, and resurrection God fashions a new creation and
-            believes that salvation is by grace through faith alone. This
-            Congregation believes, teaches, and confesses Jesus Christ as Lord
-            and Savior, through whom everything was made, and through whose
-            life, death, and resurrection God fashions a new creation and
-            believes that salvatio
+            Our sermon videos cover a wide range of topics, including faith,
+            hope, love, forgiveness, and living a purposeful life according to
+            the Christian faith. Whether you're seeking inspiration, looking for
+            answers to life's questions, or simply want to grow in your faith
+            journey, our collection of sermons is a valuable resource.
           </p>
+
+          <h5>What to Expect:</h5>
+          <ul>
+            <li>
+              <strong>Engaging Sermons:</strong>Dive into a diverse range of
+              thought-provoking and heartfelt sermons that cover a variety of
+              topics, from scripture interpretation to life application.
+            </li>
+            <li>
+              <strong>Spiritual Growth:</strong> Our sermons are designed to
+              nurture your spiritual growth and provide insight into the
+              teachings of Jesus Christ.
+            </li>
+          </ul>
         </div>
       </div>
       {loading ? (

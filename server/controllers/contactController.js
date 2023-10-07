@@ -1,4 +1,5 @@
 const Contact = require("../models/Contact");
+const sendEmail = require("./sendEmail");
 
 const createContact = async (req, res) => {
   try {
@@ -11,6 +12,7 @@ const createContact = async (req, res) => {
       message,
     });
     console.log("Contact created:", createdContact);
+    sendEmail(req.body);
     res.status(200).json(createdContact);
   } catch (error) {
     res.status(500).json({ error: "Server error" });
