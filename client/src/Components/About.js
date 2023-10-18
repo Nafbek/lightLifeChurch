@@ -16,12 +16,13 @@ export default function About() {
     purpose: [],
     fullName: "",
     email: "",
-    phoneNumber: "",
+    phoneNumber: null,
     volunteerismArea: "",
   });
   const [statusMessage, setStatusMessage] = useState();
 
   const handleInputChange = (e) => {
+    console.log("handleInputChange callled");
     const { name, value, type, checked } = e.target;
 
     if (type === "checkbox") {
@@ -38,23 +39,18 @@ export default function About() {
     e.preventDefault();
     console.log("Button get clicked.");
 
-    const purpose = Array.isArray(formData.purpose)
-      ? formData.purpose.join(",")
-      : [formData.purpose];
-  
     try {
       const response = await createMemberVolunteer({
         ...formData,
-        purpose,
       });
       console.log("Response:", response);
       if (response.ok) {
         setStatusMessage("Form submitted successfully.");
         setFormData({
-          purpose: [],
+          purpose: "",
           fullName: "",
           email: "",
-          phoneNumber: "",
+          phoneNumber: null,
           volunteerismArea: "",
         });
       } else {

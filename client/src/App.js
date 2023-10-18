@@ -10,6 +10,7 @@ import SlideImage from "./Components/SlideImages";
 import SermonVideos from "./Components/Sermon";
 import Ministries from "./Components/MinistriesPage/MinistriesContainer";
 import Event from "./Components/Event";
+import "animate.css";
 
 const style = {
   mainBgrdImage: {
@@ -20,7 +21,7 @@ const style = {
   contentBgrd: {
     backgroundColor: "rgb(213, 238, 247)",
     marginBottom: "0%",
-    minHeight: "25rem",
+    minHeight: "45rem",
   },
 };
 function App() {

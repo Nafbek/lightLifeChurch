@@ -1,6 +1,26 @@
 .cardContainer {
   margin-left: 25%;
-  width: 35%;
+  width: 40%;
+}
+
+.entirePrayer-container {
+  background-color: rgb(4, 78, 87);
+}
+.prayer-hero {
+  opacity: 0.5;
+}
+
+.prayer-time {
+  min-height: 15rem;
+  border-radius: 50%;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.each-photo {
+  width: 40%;
+  padding: 1%;
+  border: solid;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,5 +1,6 @@
-h2, h3 {
-font-family: "Delicious Handrawn", cursive;
-  font-size: 2rem;
+h2,
+h3 {
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 3rem;
   color: rgb(25, 51, 13);
 }

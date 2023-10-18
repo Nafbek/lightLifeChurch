@@ -29,17 +29,29 @@ h5 {
   justify-content: center;
   align-items: center;
   background-color: rgb(127, 255, 212, 0.5);
+  width: 100%;
+  margin: 0%;
 }
 .each-card {
   width: 30rem;
 }
+.header-div {
+  width: 20rem;
+}
+
+.event-header {
+  margin-left: 3rem;
+  font-size: 3rem;
+}
 
 .pop-btn {
   margin-top: 0.2rem;
-  
 }
 
 .calendarButton:hover {
   background-color: rgb(158, 251, 232);
   color: rgb(23, 27, 2);
+}
+.each-card:hover {
+  transform: scale(0.9);
 }

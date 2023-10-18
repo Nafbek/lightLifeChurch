@@ -14,15 +14,15 @@ const sendEmail = (FormData) => {
     to: "mspbekan@gmail.com",
     subject: "New Form submission",
     text: `
-        New Contact form submission:
-        Name:${FormData.firstName} ${FormData.lastName}
-        Email: ${FormData.email}
-        Message: ${FormData.message}
-
-        New Membership/Volunteerism form submission:
-
-
         
+        Name:${FormData.fullName || FormData.firstName || ""} ${
+      FormData.lastName || ""
+    }
+        Purpose of the form: ${FormData.purpose || "Contact"}
+        Volunteerism Area: ${FormData.volunteerismArea || "----------"}
+        Message: ${FormData.message || "--------"}
+        Email: ${FormData.email}
+        Phone Number: ${FormData.phoneNumber || "Not provided."}
         `,
   };
 

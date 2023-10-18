@@ -20,6 +20,8 @@ export const getContact = (email) => {
 };
 
 export const createMemberVolunteer = (data) => {
+  console.log("Data sent to the server: ", data);
+  console.log("Type of data.purpose: ", typeof data.purpose);
   console.log(API_BASE_URL);
   return fetch(`${API_BASE_URL}/api/membership`, {
     method: "POST",

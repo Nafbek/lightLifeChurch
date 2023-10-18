@@ -6,9 +6,9 @@ const createMemberVolunteer = async (req, res) => {
     const { purpose, fullName, email, phoneNumber, volunteerismArea } =
       req.body;
     console.log(req.body);
-    const parsedPurpose = JSON.parse(purpose);
+
     const createdMemberVolunteer = await MembershipVolunteerism.create({
-      purpose: parsedPurpose,
+      purpose,
       fullName,
       email,
       phoneNumber,

@@ -35,6 +35,12 @@ export default function Footer() {
             </div>
 
             <div>
+              <Link to="/event" className="eachLink">
+                Event
+              </Link>
+            </div>
+
+            <div>
               <a href="#" className="eachLink">
                 Resources
               </a>

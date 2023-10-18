@@ -28,7 +28,7 @@ MembershipVolunteerism.init(
       },
     },
     phoneNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     volunteerismArea: {
