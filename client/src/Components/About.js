@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./About.css";
 import "../utils/API";
 import { createMemberVolunteer } from "../utils/API";
+import SlideImage from "./SlideImages";
 const style = {
   elementWidth: {
     marginBottom: 0,
@@ -72,6 +73,10 @@ export default function About() {
 
   return (
     <>
+      <div>
+        <SlideImage />
+      </div>
+
       <div className="container about-container" style={style.elementWidth}>
         <div>
           <h2 className="page-header">About us</h2>
@@ -339,13 +344,14 @@ export default function About() {
           </div>
           {statusMessage && <p>{statusMessage}</p>}
         </div>
-        <div className="text-center visit-us">
-          <button
+        <div className="text-center visit-us" >
+         <button
             className="btn btn-outline form-btn visitButton"
             onClick={handleVisitButton}
           >
             Visit us
-          </button>
+          </button><iframe src="https://giphy.com/embed/3j7moUFcUmpXMSTbGI"  frameBorder="0" className="giphy-embed w-25" allowFullScreen></iframe>
+         
         </div>
       </div>
     </>

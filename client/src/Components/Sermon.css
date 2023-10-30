@@ -9,6 +9,12 @@
   width: 50%;
 }
 
+.heading-container {
+  min-height: 20rem;
+  color: antiquewhite;
+
+}
+
 @media screen and (max-width: 320px) {
   .videoContainer {
     margin-left: 0;

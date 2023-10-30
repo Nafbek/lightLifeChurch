@@ -29,7 +29,7 @@ function App() {
     <Router>
       <div className="mainContainer" style={style.mainBgrdImage}>
         <Header />
-        <SlideImage />
+        {/* <SlideImage /> */}
         <div style={style.contentBgrd}>
           <Routes>
             <Route path="/contact" element={<Contact />} />

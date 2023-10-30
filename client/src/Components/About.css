@@ -82,6 +82,7 @@
   width: 15rem;
 }
 
+
 @media screen and (max-width: 768px) {
   .text-container {
     font-size: 1.75rem;

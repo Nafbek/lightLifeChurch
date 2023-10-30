@@ -1,4 +1,35 @@
 .entire-container {
-  background-color: rgb(252, 119, 234);
-  min-height: 55rem;
+ 
+  min-height:58rem;
+  background-repeat: repeat;
+ 
+} 
+
+.top-container {
+  background-color: rgba(22, 250, 10, 0.6);
+}
+
+.top-heading {
+  font-size: 3rem;
+}
+.top-subContainer {
+  color: rgb(2, 36, 36);
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+
+
+
+.carousel-inner {
+  max-height: 58rem;
+}
+
+.eachRendered-div {
+ background-size: contain;
+ background-repeat: repeat;
+
+ min-height: 40rem
+
+
 }
