@@ -1,9 +1,7 @@
 .entire-container {
- 
-  min-height:58rem;
+  min-height: 58rem;
   background-repeat: repeat;
- 
-} 
+}
 
 .top-container {
   background-color: rgba(22, 250, 10, 0.6);
@@ -18,18 +16,24 @@
   font-size: 1.5rem;
 }
 
-
-
-
 .carousel-inner {
   max-height: 58rem;
 }
 
 .eachRendered-div {
- background-size: contain;
- background-repeat: repeat;
+  background-size: contain;
+  background-repeat: repeat;
+  min-height: 40rem;
+}
+.message-div {
+  background-color: rgb(191, 255, 0, 0.6);
+  font-family: cursive, Tahoma, Geneva, Verdana, sans-serif;
+  font-size: xx-large;
+}
+.bodyCard {
+  background-color: rgba(27, 3, 3, 0.9);
+  font-weight: bolder;
+  color: rgb(151, 244, 11);
 
- min-height: 40rem
-
-
+  opacity: .8;
 }
